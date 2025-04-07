@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cy9bngryg-go-gitops
+  description: This is GitOps manifest for cy9bngryg-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cy9bngryg-go
+    backstage.io/kubernetes-id: cy9bngryg-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cy9bngryg-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cy9bngryg-go
